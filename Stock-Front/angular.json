@@ -25,9 +25,31 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/default.css",
+              "src/assets/css/flight.css",
+              "src/assets/css/icons.css",
+              "src/assets/css/plugin.css",
+              "src/assets/css/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/chart.js",
+              "src/assets/js/custom-date.js",
+              "src/assets/js/custom-gallery.js",
+              "src/assets/js/custom-mixitup.js",
+              "src/assets/js/custom-nav.js",
+              "src/assets/js/custom-singledate.js",
+              "src/assets/js/custom-swiper1.js",
+              "src/assets/js/custom-swiper2.js",
+              "src/assets/js/dashboard.js",
+              "src/assets/js/isotope.min.js",
+              "src/assets/js/jquery-3.3.1.min.js",
+              "src/assets/js/main.js",
+              "src/assets/js/map.js",
+              "src/assets/js/plugin.js"
+            ]
           },
           "configurations": {
             "production": {
