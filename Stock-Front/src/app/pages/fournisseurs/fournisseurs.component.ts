@@ -21,4 +21,18 @@ export class FournisseursComponent implements OnInit {
       this.fournisseurs = data;
     });
   }
+
+supprimerFournisseur(id?: number) {
+  if (!id) return; // sécurité : ignore si id invalide
+
+  if (confirm("⚠️ Supprimer ce fournisseur ?")) {
+    this.fournisseurService.deleteFournisseur(id).subscribe({
+      next: () => {
+        this.fournisseurs = this.fournisseurs.filter(f => f.id !== id);
+        alert("✅ Fournisseur supprimé !");
+      },
+      error: () => alert("❌ Échec de la suppression.")
+    });
+  }
+}
 }

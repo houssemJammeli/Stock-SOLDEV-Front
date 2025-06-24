@@ -10,12 +10,26 @@ export interface Fournisseur {
   adresse: string;
 }
 
+export interface FournisseurCreateDto {
+  nom: string;
+  email: string;
+  telephone: string;
+  adresse: string;
+}
+
+export interface FournisseurUpdateDto {
+  nom: string;
+  email: string;
+  telephone: string;
+  adresse: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class FournisseurService {
 
-  private apiUrl = 'https://localhost:7041/'; 
+  private apiUrl = 'https://localhost:7041/api/Fournisseurs';
 
   constructor(private http: HttpClient) {}
 
@@ -23,15 +37,15 @@ export class FournisseurService {
     return this.http.get<Fournisseur[]>(this.apiUrl);
   }
 
-  addFournisseur(fournisseur: Fournisseur): Observable<Fournisseur> {
+  addFournisseur(fournisseur: FournisseurCreateDto): Observable<Fournisseur> {
     return this.http.post<Fournisseur>(this.apiUrl, fournisseur);
   }
 
-  updateFournisseur(id: number, fournisseur: Fournisseur): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, fournisseur);
-  }
+  updateFournisseur(id: number, dto: FournisseurUpdateDto): Observable<void> {
+  return this.http.put<void>(`${this.apiUrl}/${id}`, dto);
+}
 
-  deleteFournisseur(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
-  }
+  deleteFournisseur(id: number): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/${id}`);
+}
 }

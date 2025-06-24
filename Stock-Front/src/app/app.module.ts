@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FournisseursComponent } from './pages/fournisseurs/fournisseurs.component';
+import { AjoutFournisseurComponent } from './fournisseurs/ajout-fournisseur/ajout-fournisseur.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ModifierFournisseurComponent } from './fournisseurs/modifier-fournisseur/modifier-fournisseur.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,15 @@ import { FournisseursComponent } from './pages/fournisseurs/fournisseurs.compone
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    FournisseursComponent
+    FournisseursComponent,
+    AjoutFournisseurComponent,
+    ModifierFournisseurComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
