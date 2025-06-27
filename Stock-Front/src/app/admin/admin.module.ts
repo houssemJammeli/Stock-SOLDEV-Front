@@ -10,6 +10,9 @@ import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AddProduitComponent } from './produits/add-produit/add-produit.component';
+
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,12 +22,14 @@ import { RouterModule } from '@angular/router';
     ModifierFournisseurComponent,
     AdminDashboardComponent,
     LayoutAdminComponent,
+    AddProduitComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
     RouterModule,
+    FormsModule,
   ]
 })
 export class AdminModule { }

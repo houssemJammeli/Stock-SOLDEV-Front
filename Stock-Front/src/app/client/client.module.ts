@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { LayoutClientComponent } from './layout-client/layout-client.component';
+import { ListProduitsComponent } from './produits/list-produits/list-produits.component';
 
 
 
@@ -15,7 +16,8 @@ import { LayoutClientComponent } from './layout-client/layout-client.component';
     FooterComponent,
        HeaderComponent,
        HomeComponent,
-       LayoutClientComponent
+       LayoutClientComponent,
+       ListProduitsComponent
   ],
   imports: [
     CommonModule,

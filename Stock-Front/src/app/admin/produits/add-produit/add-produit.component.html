@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <h2>Ajouter un produit</h2>
+  <form (ngSubmit)="onSubmit()" #formProduit="ngForm" enctype="multipart/form-data">
+
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom</label>
+      <input type="text" id="nom" class="form-control" [(ngModel)]="produit.nom" name="nom" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea id="description" class="form-control" [(ngModel)]="produit.description" name="description" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="quantiteEnStock" class="form-label">Quantité en stock</label>
+      <input type="number" id="quantiteEnStock" class="form-control" [(ngModel)]="produit.quantiteEnStock" name="quantiteEnStock" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="prixUnitaire" class="form-label">Prix unitaire</label>
+      <input type="number" id="prixUnitaire" class="form-control" [(ngModel)]="produit.prixUnitaire" name="prixUnitaire" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="categorie" class="form-label">Catégorie</label>
+      <input type="text" id="categorie" class="form-control" [(ngModel)]="produit.categorie" name="categorie" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="fournisseurId" class="form-label">Fournisseur</label>
+      <input type="number" id="fournisseurId" class="form-control" [(ngModel)]="produit.fournisseurId" name="fournisseurId" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">Image</label>
+      <input type="file" class="form-control" (change)="onFileSelected($event)">
+    </div>
+
+    <button type="submit" class="btn btn-success">Ajouter</button>
+  </form>
+</div>

@@ -16,7 +16,7 @@
         <td>{{ f.telephone }}</td>
         <td>{{ f.adresse }}</td>
         <td>
-          <a [routerLink]="['/modifier-fournisseur', f.id]" class="btn btn-warning btn-sm">✏️</a>
+          <a [routerLink]="['/admin/fournisseurs/modifier', f.id]" class="btn btn-warning btn-sm">✏️</a>
           <button class="btn btn-danger btn-sm" (click)="supprimerFournisseur(f.id)">🗑️</button>
         </td>
       </tr>

@@ -5,6 +5,7 @@ import { AjouterFournisseurComponent } from './fournisseurs/ajouter-fournisseur/
 import { ModifierFournisseurComponent } from '../admin/fournisseurs/modifier-fournisseur/modifier-fournisseur.component';
 import { AdminDashboardComponent } from '../admin/admin-dashboard/admin-dashboard.component'
 import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
+import { AddProduitComponent } from './produits/add-produit/add-produit.component'
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: 'fournisseurs', component: ListeFournisseursComponent },
       { path: 'fournisseurs/ajouter', component: AjouterFournisseurComponent },
       { path: 'fournisseurs/modifier/:id', component: ModifierFournisseurComponent },
+      { path: 'produits/add', component: AddProduitComponent },
     ]
   }
 ];
