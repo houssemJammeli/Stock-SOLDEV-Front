@@ -14,6 +14,8 @@
           <p class="card-text fw-bold">{{ produit.prixUnitaire }} TND</p>
           <p class="card-text"><small>Catégorie : {{ produit.categorie }}</small></p>
           <p class="card-text"><small>Stock : {{ produit.quantiteEnStock }}</small></p>
+          <p class="card-text"><small>QTE : <input type="text" [(ngModel)]="produit.qte"></small></p>
+          <button (click)="Ajouter(produit)">Ajouter au panier</button>
         </div>
       </div>
     </div>

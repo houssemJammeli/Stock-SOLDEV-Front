@@ -15,10 +15,12 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { FormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+
 
   ],
   imports: [

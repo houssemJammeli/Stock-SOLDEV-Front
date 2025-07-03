@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { LayoutClientComponent } from './layout-client/layout-client.component';
 import { ListProduitsComponent } from './produits/list-produits/list-produits.component';
+import { PanierComponent } from './paniers/panier/panier.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,11 +19,13 @@ import { ListProduitsComponent } from './produits/list-produits/list-produits.co
        HeaderComponent,
        HomeComponent,
        LayoutClientComponent,
-       ListProduitsComponent
+       ListProduitsComponent,
+       PanierComponent
   ],
   imports: [
     CommonModule,
-    ClientRoutingModule
+    ClientRoutingModule,
+    FormsModule
   ]
 })
 export class ClientModule { }
