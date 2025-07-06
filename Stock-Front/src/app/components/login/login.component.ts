@@ -16,18 +16,25 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-login() {
-  this.authService.login(this.model).subscribe({
-    next: (res) => {
-      console.log("Token reçu :", res.token); // debug
-      this.authService.saveToken(res.token);
 
+  login() {
+    this.authService.login(this.model).subscribe({
+      next: (response) => {
+        this.authService.saveToken(response.token);
 
-      this.router.navigate(['/admin']); 
-    },
-    error: () => {
-      alert("Identifiants incorrects");
-    }
-  });
-}
+        const role = this.authService.getUserRole();
+
+        if (role === 'Admin') {
+          this.router.navigate(['/admin']); 
+        } else if (role === 'Client') {
+          this.router.navigate(['/client']);
+        } else {
+          this.router.navigate(['/']); // fallback
+        }
+      },
+      error: err => {
+        alert('Email ou mot de passe incorrect.');
+      }
+    });
+  }
 }

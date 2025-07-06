@@ -1,0 +1,30 @@
+<div class="register-container">
+  <h2>Inscription</h2>
+  <form (ngSubmit)="register()">
+    <label>Nom:</label>
+    <input type="text" [(ngModel)]="model.nom" name="nom" required>
+
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="model.email" name="email" required>
+
+    <label>Mot de passe:</label>
+    <input type="password" [(ngModel)]="model.password" name="password" required>
+
+    <label>Adresse:</label>
+    <input type="text" [(ngModel)]="model.adresse" name="adresse" required>
+
+    <label>Téléphone:</label>
+    <input type="text" [(ngModel)]="model.telephone" name="telephone" required>
+
+    <!-- Pour le test tu peux autoriser le choix du rôle -->
+    <label>Rôle:</label>
+    <select [(ngModel)]="model.role" name="role" required>
+      <option value="Client">Client</option>
+      <option value="Admin">Admin</option>
+    </select>
+
+    <button type="submit">S'inscrire</button>
+  </form>
+
+  <p>Vous avez déjà un compte ? <a routerLink="/login">Connectez-vous</a></p>
+</div>

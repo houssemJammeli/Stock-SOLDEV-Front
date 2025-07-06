@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { AddProduitComponent } from './produits/add-produit/add-produit.component';
 
 import { FormsModule } from '@angular/forms';
+import { ListProduitsComponent } from './produits/list-produits/list-produits.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     AdminDashboardComponent,
     LayoutAdminComponent,
     AddProduitComponent,
+    ListProduitsComponent,
   ],
   imports: [
     CommonModule,
