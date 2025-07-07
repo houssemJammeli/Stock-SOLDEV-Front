@@ -14,6 +14,9 @@ import { AddProduitComponent } from './produits/add-produit/add-produit.componen
 
 import { FormsModule } from '@angular/forms';
 import { ListProduitsComponent } from './produits/list-produits/list-produits.component';
+import { EditProduitComponent } from './produits/edit-produit/edit-produit.component';
+import { ListeUtilisateursComponent } from './utilisateurs/liste-utilisateurs/liste-utilisateurs.component';
+import { ModifierUtilisateurComponent } from './utilisateurs/modifier-utilisateur/modifier-utilisateur.component';
 
 
 @NgModule({
@@ -25,6 +28,9 @@ import { ListProduitsComponent } from './produits/list-produits/list-produits.co
     LayoutAdminComponent,
     AddProduitComponent,
     ListProduitsComponent,
+    EditProduitComponent,
+    ListeUtilisateursComponent,
+    ModifierUtilisateurComponent,
   ],
   imports: [
     CommonModule,

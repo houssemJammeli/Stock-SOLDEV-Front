@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <h2>Modifier le produit</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label>Nom</label>
+      <input type="text" [(ngModel)]="produit.nom" name="nom" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label>Description</label>
+      <textarea [(ngModel)]="produit.description" name="description" class="form-control" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label>Prix unitaire</label>
+      <input type="number" [(ngModel)]="produit.prixUnitaire" name="prixUnitaire" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label>Quantité en stock</label>
+      <input type="number" [(ngModel)]="produit.quantiteEnStock" name="quantiteEnStock" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label>Catégorie</label>
+      <input type="text" [(ngModel)]="produit.categorie" name="categorie" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label>Fournisseur ID</label>
+      <input type="number" [(ngModel)]="produit.fournisseurId" name="fournisseurId" class="form-control" required>
+    </div>
+
+    <!-- Image actuelle -->
+    <div *ngIf="produit.imageUrl">
+      <p>Image actuelle :</p>
+      <img [src]="'https://localhost:7041/' + produit.imageUrl" width="150" height="150">
+    </div>
+
+    <!-- Champ de modification d'image -->
+    <div>
+      <label>Changer l’image :</label>
+      <input type="file" (change)="onFileSelected($event)">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+  </form>
+</div>

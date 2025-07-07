@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h3>Liste des utilisateurs</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+        <th>Adresse</th>
+        <th>Rôle</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of utilisateurs">
+        <td>{{ u.nom }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.telephone }}</td>
+        <td>{{ u.adresse }}</td>
+        <td>{{ getRoleLabel(u.role) }}</td>
+        <td>
+          <a [routerLink]="['/admin/utilisateurs/edit', u.id]" class="btn btn-sm btn-warning">Modifier</a>
+          <button class="btn btn-sm btn-danger" (click)="supprimerUtilisateur(u.id)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

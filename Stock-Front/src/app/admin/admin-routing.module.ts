@@ -7,6 +7,9 @@ import { AdminDashboardComponent } from '../admin/admin-dashboard/admin-dashboar
 import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 import { AddProduitComponent } from './produits/add-produit/add-produit.component'
 import { ListProduitsComponent } from './produits/list-produits/list-produits.component';
+import { EditProduitComponent } from './produits/edit-produit/edit-produit.component';
+import { ListeUtilisateursComponent } from './utilisateurs/liste-utilisateurs/liste-utilisateurs.component';
+import { ModifierUtilisateurComponent } from './utilisateurs/modifier-utilisateur/modifier-utilisateur.component';
 
 
 const routes: Routes = [
@@ -14,11 +17,16 @@ const routes: Routes = [
     path: '',
     component: LayoutAdminComponent, 
     children: [
+      { path: '', component: AdminDashboardComponent },
       { path: 'fournisseurs', component: ListeFournisseursComponent },
       { path: 'fournisseurs/ajouter', component: AjouterFournisseurComponent },
       { path: 'fournisseurs/modifier/:id', component: ModifierFournisseurComponent },
       { path: 'produits/add', component: AddProduitComponent },
       { path: 'produits', component: ListProduitsComponent },
+      { path: 'produits/edit/:id', component: EditProduitComponent },
+      { path: 'utilisateurs', component: ListeUtilisateursComponent },
+      { path: 'utilisateurs/edit/:id', component: ModifierUtilisateurComponent },
+
     ]
   }
 ];

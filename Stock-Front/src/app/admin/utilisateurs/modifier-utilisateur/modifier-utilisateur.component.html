@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h3>Modifier un utilisateur</h3>
+  <form (ngSubmit)="modifierUtilisateur()" *ngIf="utilisateur">
+    <div class="mb-3">
+      <label>Nom</label>
+      <input class="form-control" [(ngModel)]="utilisateur.nom" name="nom">
+    </div>
+    <div class="mb-3">
+      <label>Email</label>
+      <input class="form-control" [(ngModel)]="utilisateur.email" name="email">
+    </div>
+    <div class="mb-3">
+      <label>Téléphone</label>
+      <input class="form-control" [(ngModel)]="utilisateur.telephone" name="telephone">
+    </div>
+    <div class="mb-3">
+      <label>Adresse</label>
+      <input class="form-control" [(ngModel)]="utilisateur.adresse" name="adresse">
+    </div>
+    <div class="mb-3">
+      <label>Rôle</label>
+      <select class="form-control" [(ngModel)]="utilisateur.role" name="role">
+        <option *ngFor="let r of roles" [value]="r.value">{{ r.label }}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+  </form>
+</div>
