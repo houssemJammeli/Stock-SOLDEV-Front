@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <h2>🕓 Historique de vos commandes</h2>
+
+  <div *ngIf="commandes.length === 0">Aucune commande pour le moment.</div>
+
+  <div *ngFor="let commande of commandes" class="card my-3 shadow">
+    <div class="card-body">
+      <h5 class="card-title">Commande #{{ commande.id }}</h5>
+      <p>📅 Date commande : {{ commande.dateVente | date:'longDate' }}</p>
+      <p>🚚 Livraison : {{ getLivraisonText(commande.typeLivraison) }}</p>
+      <p>📆 Date prévue : {{ commande.dateLivraisonPrevue | date:'longDate' }}</p>
+      <p>💵 Total : {{ commande.total }} TND</p>
+      <p>🧾 État : <strong>{{ getEtatText(commande.etatCommande) }}</strong></p>
+
+      <h6>📦 Produits :</h6>
+      <ul>
+        <li *ngFor="let l of commande.lignesCommande">
+          Produit #{{ l.produitId }} - Quantité : {{ l.quantite }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProduitService } from 'src/app/services/produitServicesHomeClient/produit.service';
 
 @Component({
   selector: 'app-edit-produit',
@@ -15,7 +16,8 @@ export class EditProduitComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private service: ProduitService
   ) { }
 
   ngOnInit(): void {
@@ -41,8 +43,7 @@ export class EditProduitComponent implements OnInit {
     if (this.selectedFile) {
       formData.append('Image', this.selectedFile, this.selectedFile.name);
     }
-
-    this.http.put(`https://localhost:7041/api/Produits/${this.produitId}`, formData)
+    this.service.update(formData)
       .subscribe({
         next: () => {
           alert("Produit modifié avec succès !");

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ProduitDto } from 'src/app/DTOs/ProduitDTO';
 
 export interface LignePanierDTO {
   quantite: number;
@@ -15,6 +16,10 @@ export interface PanierDTO {
   providedIn: 'root'
 })
 export class PanierService {
+
+  totalPrixTemporaire: number = 0;
+  fraisLivraisonTemporaire: number = 5;
+  produitsDansPanierTemp: { produit: ProduitDto, quantite: number }[] = [];
 
   private apiUrl = 'https://localhost:7041/api/Panier';
   constructor(private http: HttpClient) { }

@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutAdminComponent implements OnInit {
 
-    ngOnInit(): void {
+  produitsMenuOpen = false;
+  fournisseursMenuOpen = false;
+
+  toggleProduitsMenu() {
+    this.produitsMenuOpen = !this.produitsMenuOpen;
+  }
+  toggleFournisseursMenu() {
+    this.fournisseursMenuOpen = !this.fournisseursMenuOpen;
+  }
+
+
+  ngOnInit(): void {
     var tabClient = document.getElementsByClassName('client');
     for (var i = 0; i < tabClient.length; i++) {
       tabClient[i].setAttribute('disabled', 'disabled');

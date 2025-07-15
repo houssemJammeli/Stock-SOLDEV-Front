@@ -22,10 +22,15 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   chargerStats() {
-    this.dashboardService.getStats().subscribe(res => {
-      this.stats = res;
-    });
-  }
+  this.dashboardService.getStats().subscribe(res => {
+    this.stats = [
+      { label: 'Commandes', value: res.commandes, subtitle: 'Total commandes' },
+      { label: 'Ventes', value: res.ventes, subtitle: 'Quantité totale vendue' },
+      { label: 'Profit', value: res.profit + ' DT', subtitle: 'Estimation brute' },
+      { label: 'Revenu', value: res.revenu + ' DT', subtitle: 'Aujourd\'hui' }
+    ];
+  });
+}
 
   chargerVentes() {
     this.dashboardService.getVentesRecentes().subscribe(res => {

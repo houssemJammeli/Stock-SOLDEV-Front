@@ -10,6 +10,7 @@ import { ListProduitsComponent } from './produits/list-produits/list-produits.co
 import { EditProduitComponent } from './produits/edit-produit/edit-produit.component';
 import { ListeUtilisateursComponent } from './utilisateurs/liste-utilisateurs/liste-utilisateurs.component';
 import { ModifierUtilisateurComponent } from './utilisateurs/modifier-utilisateur/modifier-utilisateur.component';
+import { CommandesComponent } from './commandes/commandes/commandes.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,7 @@ const routes: Routes = [
       { path: 'produits/edit/:id', component: EditProduitComponent },
       { path: 'utilisateurs', component: ListeUtilisateursComponent },
       { path: 'utilisateurs/edit/:id', component: ModifierUtilisateurComponent },
-
+      { path: 'commandes', component: CommandesComponent },
     ]
   }
 ];

@@ -17,6 +17,7 @@ import { ListProduitsComponent } from './produits/list-produits/list-produits.co
 import { EditProduitComponent } from './produits/edit-produit/edit-produit.component';
 import { ListeUtilisateursComponent } from './utilisateurs/liste-utilisateurs/liste-utilisateurs.component';
 import { ModifierUtilisateurComponent } from './utilisateurs/modifier-utilisateur/modifier-utilisateur.component';
+import { CommandesComponent } from './commandes/commandes/commandes.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ModifierUtilisateurComponent } from './utilisateurs/modifier-utilisateu
     EditProduitComponent,
     ListeUtilisateursComponent,
     ModifierUtilisateurComponent,
+    CommandesComponent,
   ],
   imports: [
     CommonModule,

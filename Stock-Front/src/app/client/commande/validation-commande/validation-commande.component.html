@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <h2>🧾 Validation de la commande</h2>
+
+  <form>
+    <div class="mb-3">
+      <label>Nom</label>
+      <input class="form-control" [(ngModel)]="utilisateur.nom" name="nom">
+    </div>
+
+    <div class="mb-3">
+      <label>Téléphone</label>
+      <input class="form-control" [(ngModel)]="utilisateur.telephone" name="telephone">
+    </div>
+
+    <div class="mb-3">
+      <label>Adresse</label>
+      <textarea class="form-control" [(ngModel)]="utilisateur.adresse" name="adresse"></textarea>
+    </div>
+  </form>
+
+  <hr>
+
+  <p>Articles : {{ produitsDansPanier.length }}</p>
+  <p>Total HT : TND {{ totalPrix | number:'1.2-2' }}</p>
+  <p>Frais Livraison : TND {{ fraisLivraison }}</p>
+  <h4>Total TTC : TND {{ totalPrix + fraisLivraison }}</h4>
+
+  <button class="btn btn-success mt-3" (click)="validerCommande()">✅ Valider ma commande</button>
+</div>

@@ -39,7 +39,6 @@ export class AuthService {
 
   // ✅ Décoder le token pour obtenir les infos (comme le rôle)
   getDecodedToken(): any {
-    debugger
     const token = this.getToken();
     if (!token) return null;
 
@@ -49,6 +48,13 @@ export class AuthService {
       console.error("Erreur de décodage du token", error);
       return null;
     }
+  }
+
+  getUserId(): number | null {
+    const decoded = this.getDecodedToken();
+    return decoded?.["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"]
+      ? Number(decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"])
+      : null;
   }
 
   // ✅ Obtenir le rôle de l'utilisateur connecté

@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Commandes des clients</h2>
+
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Total (DT)</th>
+        <th>Nom Client</th>
+        <th>Email</th>
+        <th>État</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let commande of commandes">
+        <td>{{ commande.id }}</td>
+        <td>{{ commande.dateVente | date: 'short' }}</td>
+        <td>{{ commande.total }}</td>
+        <td>{{ commande.nomClient }}</td>
+        <td>{{ commande.emailClient }}</td>
+        <td>
+          <span [ngClass]="getBadgeClass(commande.etatCommande)">
+            {{ commande.etatCommande }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
